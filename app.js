@@ -1,9 +1,9 @@
 // Datos de ejemplo (puedes agregar más)
 const productos = [
-  { id: 1, nombre: "Polo Boxy Fit - Oscuro", precio: 74900, img: "img1" , ultimo: true},
-  { id: 2, nombre: "Polo Boxy Fit - Claro", precio: 74900, img: "img2", ultimo: true},
-  { id: 3, nombre: "Buzo Oversize", precio: 129900, img: "img3"},
-  { id: 4, nombre: "Campera Puffer", precio: 349900, img: "img4"}
+  { id: 1, nombre: "CAMPERA PUFFER", precio: 129900, img: "https://http2.mlstatic.com/D_NQ_NP_944508-MLA82126788149_012025-O.webp" , ultimo: true},
+  { id: 2, nombre: " REMERA BOXY FIT", precio: 35990, img: "https://tse4.mm.bing.net/th/id/OIP.QvD52sf02_K9JZD9jSJjBwHaJ3?pid=Api&P=0&h=180", ultimo: true},
+  { id: 3, nombre: "REMERA BOXY FIT", precio: 35990, img: "https://d22fxaf9t8d39k.cloudfront.net/a3c1db15aa4f8eb4d732b6c43f75509c0328b18530b4d4881dc8dae0ddc092145539.jpg"},
+  { id: 4, nombre: "BUZO OVERZISE", precio: 70990, img: "https://http2.mlstatic.com/D_NQ_NP_740676-MLA83210430253_032025-O.webp"}
 ];
 
 let carrito = JSON.parse(localStorage.getItem("tn_carrito")) || [];
@@ -27,7 +27,7 @@ function renderProductos(list = productos){
     col.innerHTML = `
       <div class="card h-100">
         <div class="product-image">
-          ${placeholderSVG(p.nombre)}
+          <img src="${p.img}" alt="${p.nombre}" class="w-100" style="height: 280px; object-fit: cover; border-radius: 12px 12px 0 0;">
         </div>
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-start mb-2">
@@ -44,19 +44,6 @@ function renderProductos(list = productos){
     `;
     cont.appendChild(col);
   });
-}
-
-// SVG placeholder (simple ilustración)
-function placeholderSVG(name){
-  return `
-    <svg width="220" height="180" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${name}">
-      <rect width="220" height="180" rx="12" fill="#f6f6f6"/>
-      <g transform="translate(30,20)" fill="none" stroke="#cfcfcf" stroke-width="2">
-        <path d="M0 30 C20 0,80 0,100 30" stroke-linecap="round"/>
-        <rect x="10" y="40" width="120" height="70" rx="6" fill="#eaeaea"/>
-      </g>
-    </svg>
-  `;
 }
 
 // Carrito: add / remove / modify

@@ -1,7 +1,7 @@
 :root{
   --bg: #fbfbfb;
   --card: #ffffff;
-  --accent: #d6b64f; /* dorado similar a la foto */
+  --accent: #d6b64f;
   --muted: #8a8a8a;
   --text: #111;
   --radius: 12px;
@@ -16,7 +16,7 @@ body{
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* Header */
+
 .site-header{
   background: transparent;
   border-bottom: 1px solid rgba(0,0,0,0.04);
@@ -29,7 +29,7 @@ body{
 }
 .brand-accent{ color: var(--accent); }
 
-/* Hero */
+
 .hero .badge-hero{
   background: var(--accent);
   color: #fff;
@@ -38,7 +38,7 @@ body{
   font-weight:600;
 }
 
-/* Productos grid */
+
 #productos .card{
   border: none;
   border-radius: var(--radius);
@@ -60,7 +60,7 @@ body{
   background: linear-gradient(180deg,#f5f5f5,#fff);
 }
 
-/* price / actions */
+
 .card-body .price{
   font-weight:700;
   font-size:1.05rem;
@@ -70,7 +70,7 @@ body{
   font-size: .9rem;
 }
 
-/* offcanvas tweaks */
+
 .offcanvas{
   width: 420px;
   max-width: 100%;
@@ -80,7 +80,7 @@ body{
   width:72px;
 }
 
-/* responsive tweaks */
+
 @media (min-width: 992px){
   #productos .card { height: 100%; }
 }

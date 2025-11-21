@@ -1,4 +1,4 @@
-// Datos de ejemplo (puedes agregar más)
+
 const productos = [
   { id: 1, nombre: "CAMPERA PUFFER", precio: 129900, img: "https://http2.mlstatic.com/D_NQ_NP_944508-MLA82126788149_012025-O.webp" , ultimo: true},
   { id: 2, nombre: " REMERA BOXY FIT", precio: 35990, img: "https://tse4.mm.bing.net/th/id/OIP.QvD52sf02_K9JZD9jSJjBwHaJ3?pid=Api&P=0&h=180", ultimo: true},
@@ -8,15 +8,15 @@ const productos = [
 
 let carrito = JSON.parse(localStorage.getItem("tn_carrito")) || [];
 
-// Formateador moneda ARS
+
 function fCurrency(n){
   return n.toLocaleString("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 });
 }
 
-// Inserta año
+
 document.getElementById('anio').innerText = new Date().getFullYear();
 
-// Render productos
+
 const cont = document.getElementById('productos');
 function renderProductos(list = productos){
   cont.innerHTML = '';
@@ -46,7 +46,7 @@ function renderProductos(list = productos){
   });
 }
 
-// Carrito: add / remove / modify
+
 function agregarAlCarrito(id){
   const producto = productos.find(p=>p.id===id);
   const existe = carrito.find(i=>i.id===id);
@@ -77,7 +77,7 @@ function vaciarCarrito(){
   guardarYRender();
 }
 
-// Mostrar carrito offcanvas
+// Mostrar carrito 
 const offEl = document.getElementById('offcart');
 const bsOff = new bootstrap.Offcanvas(offEl);
 
@@ -89,7 +89,7 @@ function abrirCarrito(){
 document.getElementById('btnCart').addEventListener('click', abrirCarrito);
 document.getElementById('vaciar').addEventListener('click', ()=>{
   vaciarCarrito();
-  // keep offcanvas open and show updated
+ 
   renderCarrito();
 });
 
@@ -98,7 +98,7 @@ document.getElementById('checkout').addEventListener('click', ()=> {
   alert('Simulación de pago\nTotal: ' + fCurrency(totalCarrito()));
 });
 
-// render carrito UI
+
 function renderCarrito(){
   const ul = document.getElementById('carrito');
   ul.innerHTML = '';
@@ -129,20 +129,20 @@ function renderCarrito(){
   document.getElementById('cartCount').innerText = carrito.reduce((s,i)=>s+i.cantidad,0);
 }
 
-// util
+
 function totalCarrito(){
   return carrito.reduce((s,i)=> s + (i.precio * i.cantidad), 0);
 }
 
-// guardar
+
 function guardarYRender(){
   localStorage.setItem('tn_carrito', JSON.stringify(carrito));
   renderCarrito();
-  // update count even if offcanvas closed
+  
   document.getElementById('cartCount').innerText = carrito.reduce((s,i)=>s+i.cantidad,0);
 }
 
-// Buscador simple
+
 document.getElementById('btnBuscar').addEventListener('click', ()=>{
   const q = document.getElementById('buscador').value.trim().toLowerCase();
   if(!q){ renderProductos(); return; }
@@ -150,7 +150,7 @@ document.getElementById('btnBuscar').addEventListener('click', ()=>{
   renderProductos(filt);
 });
 
-// iniciar
+
 window.addEventListener('load', ()=>{
   renderProductos();
   renderCarrito();

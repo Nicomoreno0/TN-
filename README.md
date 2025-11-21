@@ -2,7 +2,7 @@ TN STORE — Trabajo Práctico de Programación
 Descripción:
 
 Este proyecto es una tienda web simple llamada TN STORE, desarrollada como trabajo práctico de programación.
-El objetivo principal es mostrar la funcionalidad del carrito de compras, utilizando HTML, CSS y JavaScript.
+El objetivo principal es mostrar la funcionalidad del carrito de compras, utilizando JavaScript y nosotros agregamos HTML y CSS.
 
  Funcionalidades principales:
 
